@@ -1,0 +1,39 @@
+
+#   taking the input from user
+
+def my_calculator ():
+
+    print("Do you want to perform some operation ?")
+
+    choice = str(input("Enter Y for yes and N for N :---   "))
+    
+    while(choice=="Y"):
+
+        a = int(input("Enter the first number : ")) 
+        b = int(input("Enter the second number : ")) 
+    
+        print("for addtion type A")
+        print("for square type S")
+        print("for exponent type E")
+
+        op = str(input("Enter given Operator to perform the calculation : "))
+       
+        if op == "A":
+            print(f"Sum of {a} and {b} is: {a+b}")
+        elif op == "S":
+            print(f"Square of {a} is: {a*a}")
+            print(f"Square of {b} is: {b*b}")
+        elif op == "E":
+            print(f"{a} to the power of {b} is: {a**b}")
+        else:
+            print("Invalid operator! Please enter A, S, or E.")
+     
+        print("Do you want to perform some more operation ?  ")
+        choose = str(input("Y for tes and N for No :   "))
+
+        if (choose=="N"):
+            break
+        
+
+
+my_calculator()
