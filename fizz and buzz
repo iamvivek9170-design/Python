@@ -1,0 +1,52 @@
+
+
+print("Do you want to play a game (Y/N):")
+
+a = input("").upper() 
+
+while(a=="Y"):
+    num = int(input("Please enter the number : "))
+
+    if num %5==0 and num % 3 ==0 :
+        print("Fizz Buzz")
+    elif num%3 == 0 :
+        print("Fizz")
+    elif num%5 == 0 :
+        print("Buzz")
+    else:
+        print("Invalid Input")
+    i=i+1
+    
+    print("Do you still want to play a game (Y/N):")
+
+    a = input("").upper() 
+    if (a=="N"):
+        break
+
+=======================================================================
+=======================================================================
+
+# print("Do you want to play a game (Y/N):")
+
+# a = input("") 
+
+# while(True):
+#     print("to play a game enter ""Y"" :   ")
+#     a = input("") 
+    
+#     if (a=="Y"):
+
+#         num = int(input("Please enter the number"))
+
+#         if num %5==0 and num % 3 ==0 :
+#             print("Fizz Buzz")
+#         elif num%3 == 0 :
+#             print("Fizz")
+#         elif num%5 == 0 :
+#             print("Buzz")
+#         else:
+#             print("Invalid Input")
+#     else:
+#         break
+    
+    
