@@ -13,9 +13,6 @@ mydict  = {
         10: "J"
         
 
-
-
-
         # "Canada": "Ottawa",
         # "USA": "Washington, D.C",
         # "Brazil": "Brasília",
@@ -37,17 +34,19 @@ while(True):
     # my_dict_store()
 
     print("\n--- Dictionary Operations Menu ---")
-    print("1. Add new country-capital")
-    print("2. Update capital of an existing country")
-    print("3. Delete a country")
-    # print("4. Search capital by country")
-    # print("5. Display all country-capital pairs")
-    # print("6. Exit")
+    print("1. Addition to the Dictionary")
+    print("2. Update in the Dictionary")
+    print("3. Accessing the Dictionary")
+    print("4. Delete from the Dictionary")
+    # print("5. Search")
+    print("6. Exit")
+    3
+    
     choice = int(input("Which operation do you want to perform : "))
     
 
     if (choice == 1):
-        print ("To Add")
+        print("\n--- Addition to the Dictionary  ---")
         key = int(input("Enter kay value"))
         if key in mydict:
             print("Already exist in dicttonary")
@@ -58,7 +57,7 @@ while(True):
 
 
     elif (choice == 2):
-        print ("To update")
+        print("\n--- Update to the Dictionary  ---")
         key = int(input("Enter kay value"))
         if key in mydict:
             value = input("Enter value to update")
@@ -97,7 +96,37 @@ while(True):
         else :
             break
     
-
+    
+    elif (choice==4):
+        print("\n--- Delete from the Dictionary  ---")
+        print("1. Delete using the key")
+        print("2. Delete the item from the dictionary")
+        ss_choice = int(input("Enter the number by which you want to delete : "))
+        
+        if(ss_choice == 1):
+            key = int(input("Enter kay value"))
+            if key in mydict:
+                a = mydict.pop(key) 
+                print(f"you delete value store in {a}")
+            else :
+                print("Not Present in the dictionary")
+        if(ss_choice == 2):
+            key = int(input("Enter kay value"))
+            if key in mydict:
+                d = mydict.popitem()
+                print(f"you delete value store in {d}")
+            else :
+                print("Not Present in the dictionary")
+    else :
+        if (choice==6):
+            break
+                
+            
+            
+        
+            
+    
+    
         
          
         
@@ -113,7 +142,3 @@ while(True):
 
     
     
-    
-    # choose = input("Enter any value to continue......")
-    # if (choose=="N"):
-    #     break
