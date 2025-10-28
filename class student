@@ -1,0 +1,21 @@
+class Student :
+    
+    #instance variables 
+    def __init__(self,Name,Rollno,Subject):
+        self.name = Name
+        self.rollno = Rollno
+        self.subject = Subject
+        
+        
+    #Instance Methods
+    def get_subject(self):
+        return self.subject
+    
+    def set_subject(self,N_Subject):
+        self.subject = N_Subject
+        
+    def get_name(self):
+        return self.name
+    
+    def set_name(self,N_Name):
+        self.name = N_Name
