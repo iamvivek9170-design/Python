@@ -1,0 +1,41 @@
+class Planets :
+    
+    
+    def __init__(self,__pname,pdistance,pgravity):
+        self.name = __pname
+        self.distance = pdistance
+        self.gravity = pgravity
+        
+    def get_name (self):
+        return self.name
+    
+    def get_distance(self):
+        return self.distance
+    
+    def get_gravity (self):
+        return self.gravity
+    
+    
+def main ():
+    
+    p1 = Planets("Earth",10000,1)
+    p2 = Planets("Venus",800,0.8)
+    
+    print("--"*30)
+    print(p1.name)
+    print(p1.distance)
+    print(p1.get_gravity())
+    
+    
+    
+    print("--"*30)
+    print(p2.name)
+    print(p2.distance)
+    print(p2.get_gravity())        
+    print(p2.gravity)
+    
+    
+    
+    
+if  __name__=="__main__":
+    main()
