@@ -1,0 +1,94 @@
+class Student :
+    
+    school_name = "CDAC"
+    
+    #instance variables 
+    def __init__(self,Name,Rollno,Subject):
+        self.name = Name
+        self.rollno = Rollno
+        self.subject = Subject
+        
+        
+    #Instance Methods
+    def get_subject(self):
+        return self.subject
+    
+    def set_subject(self,N_Subject):
+        self.subject = N_Subject
+        
+    def get_name(self):
+        return self.name
+    
+    def set_name(self,N_Name):
+        self.name = N_Name
+        
+    @classmethod   
+    def get_school_name(self):
+        return self.school_name 
+    @classmethod    
+    def set_school_name(self,school_na):
+        self.school_name = school_na
+    
+    @staticmethod
+    def sdisplay_prerequiste_skill(self,skill):
+        print(f"Student have skill of {skill}")
+        
+        
+        
+def main ():
+    s1 = Student("Vivek",101,"Maths")
+    s2 = Student("Atul", 102,"Python")
+   
+    a = s1.get_subject()
+    b = s2.get_subject()
+    
+    print("-" * 30)
+    print("...before update...")
+    print(f"student1 subject = {a}")
+    print(f"student2 subject = {b}")
+
+    print("-" * 30)
+    s1.set_name("English")
+    s2.set_name("Kuch bhi")
+
+    print("...After update...")
+    print(f"student1 subject = {s1.get_subject()}")
+    print(f"student2 subject = {s2.get_subject()}")    
+    
+    print("-" * 30)
+
+ 	# display the class variable 
+    print(f"School name {Student.school_name}")
+
+    print("-" * 30)
+
+
+    print((f"school name of first student {s1.get_school_name()}"))
+    print((f"school name of second student {s2.get_school_name()}"))
+    
+    # update the class variable using set_school_name method
+    s1.set_school_name("LFH")
+    s2.set_school_name("LFH")
+    
+    Student.set_school_name("GRDGDRSRGGSg")
+    # display the class variable 
+    print(Student.get_school_name())
+    
+    # Update and display the class variable 
+    # Student.set_school_name("SCA")
+    # .set_school_name("SCA")
+    print(f"school name of student {Student.get_school_name()}")
+    
+    print(s1.school_name)
+    print(s2.school_name)
+    
+    
+    print(s1.school_name)
+    print(s2.school_name)
+    
+
+
+
+    
+if  __name__ =="__main__":
+    main()
