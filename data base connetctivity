@@ -1,0 +1,120 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+ host="localhost",
+ port="3306",
+ user="root",
+ password="root",
+ database="vivek"
+)
+
+
+cursor = mydb.cursor()
+
+cursor.execute("select * from salesman;")
+for row in cursor:
+    print(row)
+
+# sql = "insert into salesman (stid, sname, city,experience) values (%s,%s)"
+# values = (10,"Vivek","Varanas",43)
+cursor.execute("insert into salesman values (111,'vivek','fre',23);")
+cursor.execute("select * from salesman;")
+
+for row in cursor:
+    print(row)
+
+print(cursor.rowcount, "record inserted.")
+    
+mydb.commit()
+mydb.close()
+
+
+# Data can be inserted into a database using a mycursor.execute() method in Python with MySQL Connector in several ways:
+# 1. Inserting a Single Row with Hardcoded Values:
+# This involves directly embedding the values into the SQL INSERT statement string. This method is suitable for inserting a single, static record.
+# Python
+
+# sql = "INSERT INTO customers (name, address) VALUES ('John', 'Highway 21')"
+# mycursor.execute(sql)
+# mydb.commit()
+# 2. Inserting a Single Row with Parameterized Query (Recommended):
+# This method uses placeholders (%s) in the SQL statement and passes the values as a tuple or list to the execute() method. This protects against SQL injection and handles data types correctly.
+# Python
+
+# sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+# val = ("Peter", "Lowstreet 4")
+# mycursor.execute(sql, val)
+# mydb.commit()
+# 3. Inserting Multiple Rows using executemany():
+# For inserting multiple rows efficiently, the executemany() method is used. This method takes an SQL INSERT statement with placeholders and a list of tuples, where each tuple represents a row of data.
+# Python
+
+# sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+# val = [
+#   ('Amy', 'Apple st 652'),
+#   ('Hannah', 'Mountain 21'),
+#   ('Michael', 'Valley 345')
+# ]
+# mycursor.executemany(sql, val)
+# mydb.commit()
+# 4. Inserting Data using a Dictionary (Named Placeholders):
+# Some database connectors, including MySQL Connector/Python, support named placeholders (e.g., %(name)s). This allows passing data as a dictionary, improving readability when dealing with many columns.
+# Python
+
+# sql = "INSERT INTO employees (emp_no, first_name, last_name) VALUES (%(emp_no)s, %(first_name)s, %(last_name)s)"
+# data = {'emp_no': 101, 'first_name': 'Alice', 'last_name': 'Smith'}
+# mycursor.execute(sql, data)
+# mydb.commit()
+
+
+
+
+
+
+    
+    
+    
+# import mysql.connector
+
+
+# # Step 1: Connect to the database
+# mydb = mysql.connector.connect(
+#    host="localhost",      # keep as localhost if MySQL is on your computer
+#    user="root",           # your MySQL username
+#    password="root",    # your MySQL password
+#    database="vivek"        # the database we just created
+# )
+
+
+# # Step 2: Create a cursor
+# cursor = mydb.cursor()
+
+
+# # Step 3: Execute an INSERT query
+# insert_query = """
+# INSERT INTO salesman (stid, sname, city,experience)
+# VALUES (%s, %s, %s, %s)
+# """
+
+
+# data = (9, 'Pratiksha', 'Harshe',  '2024')  # Added HireDate (it was missing)
+# cursor.execute(insert_query, data)
+
+
+# # Step 4: Commit the transaction (this saves the insert to the database)
+# mydb.commit()
+
+
+# # Step 5: Fetch all rows from the Employees table to confirm the insertion
+# cursor.execute("SELECT * FROM salesman")  # A SELECT query to retrieve all rows
+# rows = cursor.fetchall()
+
+
+# # Step 6: Print the results
+# for row in rows:
+#    print(row)
+
+
+# # Step 7: Close the connection
+# cursor.close()
+# mydb.close()
