@@ -1,0 +1,78 @@
+class Students:
+
+    def __init__(self,f_name,l_name,class_year,major):
+            # instance variable
+        self.name = f_name
+        self.lname = l_name
+        self.class_year = class_year
+        self.major = major
+        print(f"{self} was created suddessfully with values {f_name},{l_name},{class_year},{major}")
+        
+    #to set
+    
+    def get_fname(self):
+        return self.name
+    
+    def set_fname(self,first_name):
+        self.name = first_name
+
+    def get_lname(self):
+        return self.lname
+    
+    def set_lname(self,last_name):
+        self.lname = last_name
+        return last_name
+    
+    def get_class_year(self):
+        return self.class_year
+    
+    def get_major(self):
+        return self.major
+    
+    # to get name 
+   
+        
+def main():
+    
+    
+    s1 = Students("Vivek","Tiwari",2025,"python")
+    s2 = Students("Vivek","Tiwari",2024,"Kal")
+
+    print("-"*50)
+
+    
+
+    print(s1.get_fname())
+    print(s1.get_lname())
+    print(s1.get_class_year())
+    print(s1.get_major())
+    
+    print("-"*50)
+    
+    print(s2.get_fname())
+    print(s2.get_lname())
+    print(s2.get_class_year())
+    print(s2.get_major())
+       
+    
+    print("-"*50)
+    print(Students.get_fname())    
+    
+if  __name__ =="__main__":
+    main()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     # f = input("enter name = ")
+    # l = input("Enter last  = ")
+    # a = Students(f,l)
+    
+    # print(a.get_fname(),a.get_lname())
